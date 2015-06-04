@@ -22,9 +22,7 @@ public class Producer {
         final int NUM_MSGS;
 
         if ((args.length < 1) || (args.length > 2)) {
-            System.err.println(
-                    "Program takes one or two arguments: "
-                    + "<dest_type> [<number-of-messages>]");
+            System.err.println("Program takes one or two arguments: <dest_type> [<number-of-messages>]");
             System.exit(1);
         }
 
