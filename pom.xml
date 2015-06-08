@@ -9,6 +9,8 @@
         <module>JMSProducer</module>
         <module>JMSConsumer</module>
         <module>JMSRemoteProducer</module>
+        <module>JMSRemoteConsumer</module>
+        <module>JMSRemoteJNDIProducer</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
