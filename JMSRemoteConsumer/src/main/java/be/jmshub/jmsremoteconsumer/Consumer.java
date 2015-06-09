@@ -4,7 +4,6 @@ import javax.jms.JMSException;
 import com.sun.messaging.ConnectionConfiguration;
 import com.sun.messaging.ConnectionFactory;
 import com.sun.messaging.Queue;
-import com.sun.messaging.Topic;
 import javax.jms.Connection;
 import javax.jms.Session;
 import javax.jms.Message;
@@ -33,6 +32,9 @@ public class Consumer {
 
             int count = 0;
 
+            // Start connection or nothing will happen!!!
+            connection.start();
+
             while (true) {
                 Message m = consumer.receive(1000);
 
@@ -41,7 +43,8 @@ public class Consumer {
                 } else {
                     System.out.println("JMS REMOTE CONSUMER: message not empty");
                     if (m instanceof TextMessage) {
-                        System.out.println("JMS REMOTE CONSUMER: message text: " + m.getBody(String.class));
+                        TextMessage t = (TextMessage) m;
+                        System.out.println("JMS REMOTE CONSUMER: message text: " + t.getText());
                     } else {
                         System.out.println("JMS REMOTE CONSUMER: other message");
                     }
@@ -49,6 +52,10 @@ public class Consumer {
                 }
                 System.out.println("JMS REMOTE CONSUMER: total received: " + count);
             }
+
+            //Code not reached
+            //session.close();
+            //connection.close();
         } catch (Exception ex) {
             System.out.println("JMS REMOTE PRODUCER: EXCEPTION");
         }

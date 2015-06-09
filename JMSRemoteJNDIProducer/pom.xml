@@ -18,9 +18,9 @@
             <version>7.0</version>
         </dependency>
         <dependency>
-            <groupId>com.sun.messaging.mq</groupId>
-            <artifactId>imq</artifactId>
-            <version>4.4</version>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-all</artifactId>
+            <version>5.11.1</version>
         </dependency>
     </dependencies>
     
@@ -41,7 +41,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>be.jmshub.jmsremotejndiproducer.Producer</mainClass>
+                            <mainClass>be.jmshub.jmsremotejndiconsumer.Consumer</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

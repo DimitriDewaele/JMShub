@@ -11,6 +11,9 @@
         <module>JMSRemoteProducer</module>
         <module>JMSRemoteConsumer</module>
         <module>JMSRemoteJNDIProducer</module>
+        <module>JMSActiveMQProducer</module>
+        <module>JMSActiveMQConsumer</module>
+        <module>JMSRemoteJNDIConsumer</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
