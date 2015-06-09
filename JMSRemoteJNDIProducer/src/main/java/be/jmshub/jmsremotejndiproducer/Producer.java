@@ -16,26 +16,36 @@ public class Producer {
 
     public static void main(String[] args) throws JMSException {
         System.out.println("JMS REMOTE PRODUCER: start");
-        Queue queue = new Queue("MyQueue");
+//        Queue queue = new Queue("MyQueue");
+        Queue queue = new Queue("testQueue");
         try {
-            Properties env = new Properties();
-            
+
+            Properties jndiParamaters = new Properties();
+            jndiParamaters.put(Context.INITIAL_CONTEXT_FACTORY, "org.apache.activemq.jndi.ActiveMQInitialContextFactory");
+            jndiParamaters.put(Context.PROVIDER_URL, "tcp://localhost:61616");
+            Context ctx = new InitialContext(jndiParamaters);
+
+            //FOR ACTIVEMQ
             //FOR GLASSFISH
-            env.setProperty(Context.INITIAL_CONTEXT_FACTORY, "com.sun.enterprise.naming.SerialInitContextFactory");
-            env.setProperty(Context.URL_PKG_PREFIXES, "com.sun.enterprise.naming");
-            env.setProperty(Context.STATE_FACTORIES, "com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl");
-//            env.setProperty(Context.PROVIDER_URL, "iiop://localhost:7676");
-            env.put("org.omg.CORBA.ORBInitialHost", "localhost");
-            env.put("org.omg.CORBA.ORBInitialPort", "7676");
-            
+//            Properties env = new Properties();
+//            env.setProperty(Context.INITIAL_CONTEXT_FACTORY, "com.sun.enterprise.naming.SerialInitContextFactory");
+//            env.setProperty(Context.URL_PKG_PREFIXES, "com.sun.enterprise.naming");
+//            env.setProperty(Context.STATE_FACTORIES, "com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl");
+////            env.setProperty(Context.PROVIDER_URL, "iiop://localhost:7676");
+//            env.put("org.omg.CORBA.ORBInitialHost", "localhost");
+//            env.put("org.omg.CORBA.ORBInitialPort", "7676");
+            //TODO: should connect to remote accessable queue like: jms/queue/test
 //            //FOR JBOSS
+//            Properties env = new Properties();
 //            env.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.jboss.naming.remote.client.InitialContextFactory");
 //            env.setProperty(Context.PROVIDER_URL, "remote://localhost:4447");
-
-            InitialContext initialContext = new InitialContext(env);
+            
+            //InitialContext initialContext = new InitialContext(env);
+            InitialContext initialContext = new InitialContext(jndiParamaters);
             ConnectionFactory connectionFactory = null;
             try {
-                connectionFactory = (ConnectionFactory) initialContext.lookup("jms/DefaultJMSConnectionFactory");
+//                connectionFactory = (ConnectionFactory) initialContext.lookup("jms/DefaultJMSConnectionFactory");
+                connectionFactory = (ConnectionFactory) initialContext.lookup("jms/connectionFactory");
 
                 Connection connection = connectionFactory.createConnection();
                 Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);

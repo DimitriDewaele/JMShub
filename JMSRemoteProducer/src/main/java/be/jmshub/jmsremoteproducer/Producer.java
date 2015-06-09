@@ -13,7 +13,7 @@ public class Producer {
 
     private static ConnectionFactory connectionFactory;
     private static Queue queue;
-    
+
     public static void main(String[] args) throws JMSException {
         System.out.println("JMS REMOTE PRODUCER: start");
 
@@ -39,6 +39,10 @@ public class Producer {
                 count += 1;
             }
             System.out.println("JMS REMOTE PRODUCER: total messages sent: " + count);
+
+            // Clean up
+            session.close();
+            connection.close();
         } catch (Exception ex) {
             System.out.println("JMS REMOTE PRODUCER: EXCEPTION");
         }
