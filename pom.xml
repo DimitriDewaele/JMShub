@@ -5,16 +5,22 @@
     <artifactId>JMShub</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+    
     <modules>
         <module>JMSProducer</module>
         <module>JMSConsumer</module>
         <module>JMSRemoteProducer</module>
         <module>JMSRemoteConsumer</module>
-        <module>JMSRemoteJNDIProducer</module>
         <module>JMSActiveMQProducer</module>
         <module>JMSActiveMQConsumer</module>
+        <module>JMSRemoteJNDIProducer</module>
         <module>JMSRemoteJNDIConsumer</module>
+        <module>JMSRemoteJNDIhttpProducer</module>
+        <module>JMSRemoteJNDIhttpConsumer</module>
+        <module>JMSRemoteJNDIhttpsProducer</module>
+        <module>JMSRemoteJNDIhttpsConsumer</module>
     </modules>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
