@@ -41,7 +41,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>be.jmshub.jmsremotejndihttpconsumer.Consumer</mainClass>
+                            <mainClass>be.jmshub.jmsremotejndihttpproducer.Producer</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

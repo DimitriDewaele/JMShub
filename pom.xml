@@ -17,6 +17,8 @@
         <module>JMSRemoteJNDIConsumer</module>
         <module>JMSRemoteJNDIhttpProducer</module>
         <module>JMSRemoteJNDIhttpConsumer</module>
+        <module>JMSRemoteJNDIhttpsProducer</module>
+        <module>JMSRemoteJNDIhttpsConsumer</module>
     </modules>
     
     <properties>
