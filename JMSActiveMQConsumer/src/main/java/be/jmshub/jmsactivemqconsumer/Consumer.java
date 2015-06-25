@@ -19,7 +19,7 @@ public class Consumer {
 
             Connection connection = connectionFactory.createConnection();
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-            Queue queue = session.createQueue("testQueue");
+            Queue queue = session.createQueue("jms/queue/MyQueue");
             MessageConsumer consumer = session.createConsumer(queue);
 
             System.out.println("JMS REMOTE CONSUMER: connected");

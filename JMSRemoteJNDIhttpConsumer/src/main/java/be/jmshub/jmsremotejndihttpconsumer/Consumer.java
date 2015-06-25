@@ -55,7 +55,7 @@ public class Consumer {
             //session.close();
             //connection.close();
         } catch (Exception ex) {
-            System.out.println("JMS REMOTE PRODUCER: EXCEPTION");
+            System.out.println("JMS REMOTE CONSUMER: EXCEPTION - " + ex.toString());
         }
 
         System.out.println("JMS REMOTE CONSUMER: finished");
