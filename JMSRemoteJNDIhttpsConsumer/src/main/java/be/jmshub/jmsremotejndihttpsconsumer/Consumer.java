@@ -13,7 +13,8 @@ import javax.naming.InitialContext;
 
 public class Consumer {
 
-    public static void main(String[] args) throws JMSException {
+    public static void main(String[] args) throws Exception {
+        System.out.println("Communication to ACTIVE MQ with JNDI lookup over HTTPS");
         System.out.println("JMS REMOTE CONSUMER: start");
 
         try {
@@ -34,7 +35,8 @@ public class Consumer {
             connection.start();
 
             while (true) {
-                Message m = consumer.receive(1000);
+                //Message m = consumer.receive(1000);
+                Message m = consumer.receiveNoWait();
 
                 if (m == null) {
                     System.out.println("JMS REMOTE CONSUMER: no message");
@@ -55,9 +57,8 @@ public class Consumer {
             //session.close();
             //connection.close();
         } catch (Exception ex) {
-            System.out.println("JMS REMOTE PRODUCER: EXCEPTION");
+            System.out.println("JMS REMOTE CONSUMER: EXCEPTION - " + ex.toString());
+            throw ex;
         }
-
-        System.out.println("JMS REMOTE CONSUMER: finished");
     }
 }

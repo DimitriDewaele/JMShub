@@ -14,6 +14,7 @@ import javax.naming.InitialContext;
 public class Consumer {
 
     public static void main(String[] args) throws JMSException {
+        System.out.println("Communication to ACTIVE MQ with JNDI lookup");
         System.out.println("JMS REMOTE CONSUMER: start");
 
         try {

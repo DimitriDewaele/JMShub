@@ -13,7 +13,7 @@ import javax.naming.InitialContext;
 public class Producer {
 
     public static void main(String[] args) throws JMSException {
-
+        System.out.println("Communication to ACTIVE MQ with JNDI lookup over HTTPS");
         System.out.println("JMS REMOTE PRODUCER: start");
 
         try {

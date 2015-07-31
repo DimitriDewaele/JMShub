@@ -17,6 +17,7 @@ public class Consumer {
     private static Queue queue;
 
     public static void main(String[] args) {
+        System.out.println("Communication to GLASSFISH OPEN MQ");
         System.out.println("JMS CONSUMER: start");
         
         JMSConsumer consumer;

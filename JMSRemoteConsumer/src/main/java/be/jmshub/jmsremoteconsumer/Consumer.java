@@ -16,6 +16,7 @@ public class Consumer {
     private static Queue queue;
 
     public static void main(String[] args) throws JMSException {
+        System.out.println("Communication to GLASSFISH OPEN MQ - remote (localhost) connection");
         System.out.println("JMS REMOTE CONSUMER: start");
 
         queue = new Queue("MyQueue");
