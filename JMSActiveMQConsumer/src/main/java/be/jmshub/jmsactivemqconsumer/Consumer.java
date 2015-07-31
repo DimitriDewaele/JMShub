@@ -12,6 +12,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 public class Consumer {
 
     public static void main(String[] args) throws JMSException {
+        System.out.println("Communication to ACTIVE MQ");
         System.out.println("JMS REMOTE CONSUMER: start");
 
         try {
@@ -19,7 +20,7 @@ public class Consumer {
 
             Connection connection = connectionFactory.createConnection();
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-            Queue queue = session.createQueue("testQueue");
+            Queue queue = session.createQueue("jms/queue/MyQueue");
             MessageConsumer consumer = session.createConsumer(queue);
 
             System.out.println("JMS REMOTE CONSUMER: connected");

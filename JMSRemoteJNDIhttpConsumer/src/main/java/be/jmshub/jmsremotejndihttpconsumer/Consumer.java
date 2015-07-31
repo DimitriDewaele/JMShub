@@ -14,6 +14,7 @@ import javax.naming.InitialContext;
 public class Consumer {
 
     public static void main(String[] args) throws JMSException {
+        System.out.println("Communication to ACTIVE MQ with JNDI lookup over HTTP");
         System.out.println("JMS REMOTE CONSUMER: start");
 
         try {
@@ -55,7 +56,7 @@ public class Consumer {
             //session.close();
             //connection.close();
         } catch (Exception ex) {
-            System.out.println("JMS REMOTE PRODUCER: EXCEPTION");
+            System.out.println("JMS REMOTE CONSUMER: EXCEPTION - " + ex.toString());
         }
 
         System.out.println("JMS REMOTE CONSUMER: finished");
