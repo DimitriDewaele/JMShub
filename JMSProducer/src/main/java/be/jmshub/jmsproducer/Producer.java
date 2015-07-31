@@ -14,6 +14,7 @@ public class Producer {
     private static Queue queue;
     
     public static void main(String[] args) {
+        System.out.println("Communication to GLASSFISH OPEN MQ");
         System.out.println("JMS PRODUCER: start");
 
         try (JMSContext context = connectionFactory.createContext();) {

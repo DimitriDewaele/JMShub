@@ -11,6 +11,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 public class Producer {
 
     public static void main(String[] args) throws JMSException {
+        System.out.println("Communication to ACTIVE MQ");
         System.out.println("JMS REMOTE PRODUCER: start");
 
         try {
